@@ -55,7 +55,7 @@ final class Middleware implements MiddlewareInterface
 
     /**
      * @param ResponseInterface $response
-     * @param array $headers
+     * @param array             $headers
      */
     private function extractHeaders(ResponseInterface $response, array $headers)
     {

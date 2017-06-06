@@ -31,7 +31,7 @@ final class MiddlewareTest extends TestCase
         $middleware->post($response, $options);
 
         self::assertSame([
-            ['header' => 'value']
+            ['header' => 'value'],
         ], $array);
     }
 }
