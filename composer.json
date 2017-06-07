@@ -10,13 +10,12 @@
     ],
     "require": {
         "php": "^7.0",
-        "api-clients/installer": "^1.0",
         "api-clients/middleware": "^2.0",
-        "api-clients/rx": "^2.1",
-        "ringcentral/psr7": "^1.2"
+        "api-clients/rx": "^2.1"
     },
     "require-dev": {
-        "api-clients/test-utilities": "^4.1"
+        "api-clients/test-utilities": "^4.1",
+        "ringcentral/psr7": "^1.2"
     },
     "autoload": {
         "psr-4": {
