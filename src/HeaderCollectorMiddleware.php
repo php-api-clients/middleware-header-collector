@@ -10,7 +10,7 @@ use Psr\Http\Message\ResponseInterface;
 use React\Promise\CancellablePromiseInterface;
 use function React\Promise\resolve;
 
-final class Middleware implements MiddlewareInterface
+final class HeaderCollectorMiddleware implements MiddlewareInterface
 {
     use ErrorTrait;
     use PreTrait;
