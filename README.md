@@ -1,4 +1,4 @@
-# API Client headers collecor middleware for PHP 7.x
+# API Client headers collector middleware for PHP 7.x
 
 [![Build Status](https://travis-ci.org/php-api-clients/middleware-header-collector.svg?branch=master)](https://travis-ci.org/php-api-clients/middleware-header-collector)
 [![Latest Stable Version](https://poser.pugx.org/api-clients/middleware-header-collector/v/stable.png)](https://packagist.org/packages/api-clients/middleware-header-collector)
