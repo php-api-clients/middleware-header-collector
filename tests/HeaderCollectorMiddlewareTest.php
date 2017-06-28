@@ -28,7 +28,7 @@ final class HeaderCollectorMiddlewareTest extends TestCase
         ];
 
         $middleware = new HeaderCollectorMiddleware($headers);
-        $middleware->post($response, $options);
+        $middleware->post($response, 'abc', $options);
 
         self::assertSame([
             ['header' => 'value'],
