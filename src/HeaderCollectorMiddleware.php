@@ -5,7 +5,6 @@ namespace ApiClients\Middleware\HeaderCollector;
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PreTrait;
-use ApiClients\Foundation\Middleware\Priority;
 use Psr\Http\Message\ResponseInterface;
 use React\Promise\CancellablePromiseInterface;
 use function React\Promise\resolve;
@@ -32,9 +31,14 @@ final class HeaderCollectorMiddleware implements MiddlewareInterface
      * @param  ResponseInterface           $response
      * @param  array                       $options
      * @return CancellablePromiseInterface
+     *
+     *
      */
-    public function post(ResponseInterface $response, array $options = []): CancellablePromiseInterface
-    {
+    public function post(
+        ResponseInterface $response,
+        string $transactionId,
+        array $options = []
+    ): CancellablePromiseInterface {
         if (isset($options[self::class]) &&
             isset($options[self::class][Options::HEADERS]) &&
             is_array($options[self::class][Options::HEADERS])
@@ -43,14 +47,6 @@ final class HeaderCollectorMiddleware implements MiddlewareInterface
         }
 
         return resolve($response);
-    }
-
-    /**
-     * @return int
-     */
-    public function priority(): int
-    {
-        return Priority::LAST;
     }
 
     /**
