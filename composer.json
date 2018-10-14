@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "^7.0",
+        "php": "^7.2",
         "api-clients/middleware": "^4.0",
         "api-clients/rx": "^2.1"
     },
@@ -30,7 +30,7 @@
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "7.0"
+            "php": "7.2"
         }
     },
     "scripts": {
@@ -84,13 +84,6 @@
         ],
         "ci-coverage": [
             "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
-        ],
-        "post-create-project-cmd": [
-            "ApiClients\\Tools\\Installer\\Installer::postCreateProject",
-            "composer update --no-autoloader --ansi",
-            "composer update --ansi",
-            "@cs-fix",
-            "@qa-all"
         ]
     }
 }
