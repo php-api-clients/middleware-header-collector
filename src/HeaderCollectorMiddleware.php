@@ -41,7 +41,7 @@ final class HeaderCollectorMiddleware implements MiddlewareInterface
     ): CancellablePromiseInterface {
         if (isset($options[self::class]) &&
             isset($options[self::class][Options::HEADERS]) &&
-            is_array($options[self::class][Options::HEADERS])
+            \is_array($options[self::class][Options::HEADERS])
         ) {
             $this->extractHeaders($response, $options[self::class][Options::HEADERS]);
         }
@@ -53,7 +53,7 @@ final class HeaderCollectorMiddleware implements MiddlewareInterface
      * @param ResponseInterface $response
      * @param array             $headers
      */
-    private function extractHeaders(ResponseInterface $response, array $headers)
+    private function extractHeaders(ResponseInterface $response, array $headers): void
     {
         $set = [];
 
@@ -65,7 +65,7 @@ final class HeaderCollectorMiddleware implements MiddlewareInterface
             $set[$header] = $response->getHeaderLine($header);
         }
 
-        if (count($set) === 0) {
+        if (\count($set) === 0) {
             return;
         }
 

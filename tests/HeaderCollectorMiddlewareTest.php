@@ -8,13 +8,16 @@ use ApiClients\Middleware\HeaderCollector\Options;
 use ApiClients\Tools\TestUtilities\TestCase;
 use RingCentral\Psr7\Response;
 
+/**
+ * @internal
+ */
 final class HeaderCollectorMiddlewareTest extends TestCase
 {
-    public function testPost()
+    public function testPost(): void
     {
         $array = [];
         $headers = new Headers();
-        $headers->subscribe(function ($headers) use (&$array) {
+        $headers->subscribe(function ($headers) use (&$array): void {
             $array[] = $headers;
         });
 
