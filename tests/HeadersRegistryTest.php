@@ -5,9 +5,12 @@ namespace ApiClients\Tests\Middleware\HeaderCollector;
 use ApiClients\Middleware\HeaderCollector\HeadersRegistry;
 use ApiClients\Tools\TestUtilities\TestCase;
 
+/**
+ * @internal
+ */
 final class HeadersRegistryTest extends TestCase
 {
-    public function testGet()
+    public function testGet(): void
     {
         $registry = new HeadersRegistry();
         self::assertSame([], $registry->getAll());
